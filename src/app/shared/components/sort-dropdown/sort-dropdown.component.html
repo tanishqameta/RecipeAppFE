@@ -1,0 +1,18 @@
+<div class="sort-container">
+  <select
+    class="sort-select"
+    [(ngModel)]="selectedKey"
+    (change)="onSortOptionChange()"
+  >
+    <option *ngFor="let option of sortDropdownOptions" [value]="option.key">
+      {{ option.label }}
+    </option>
+  </select>
+
+  <button class="sort-order-btn" (click)="toggleSortOrder()">
+    <i
+      class="bi"
+      [ngClass]="{ 'bi-sort-down-alt': isAscending, 'bi-sort-up-alt': !isAscending }"
+    ></i>
+  </button>
+</div>

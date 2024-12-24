@@ -1,0 +1,25 @@
+.user-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    width: fit-content;
+    border-radius: var(--border-radius-md);
+}
+
+.user-rating>i {
+    font-size: 1rem;
+}
+
+.bg-green {
+    background-color: var(--color-green);
+}
+
+.bg-yellow {
+    background-color: var(--color-yellow);
+}
+
+.bg-red {
+    background-color: var(--color-red);
+}

@@ -1,0 +1,40 @@
+<div class="recipe-container" *ngIf="recipe && !isLoading; else noData">
+  <div class="recipe-header">
+    <img [src]="recipe.image" alt="Recipe image" class="recipe-image" />
+    <div class="recipe-info">
+      <h1 class="recipe-name">{{ recipe.name }}</h1>
+      <div class="recipe-tags">
+        <app-tag *ngFor="let label of recipe.tags" [label]="label"></app-tag>
+      </div>
+      <app-user-rating [rating]="recipe.rating" [reviewCount]="recipe.reviewCount"></app-user-rating>
+      <!-- <app-time [prepTime]="recipe.prepTimeMinutes" [cookTime]="recipe.cookTimeMinutes"></app-time> -->
+      <div class="section">
+        <p><strong>Difficulty:</strong> {{ recipe.difficulty }}</p>
+        <p><strong>Cuisine:</strong> {{ recipe.cuisine }}</p>
+        <p><strong>Servings:</strong> {{ recipe.servings }}</p>
+        <p><strong>Calories per serving:</strong> {{ recipe.caloriesPerServing }} kcal</p>
+        <p><strong>Preparation time:</strong> {{ recipe.prepTimeMinutes }} min</p>
+        <p><strong>Cooking time:</strong> {{ recipe.cookTimeMinutes }} min</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="recipe-details">
+    <div class="section">
+      <h3>Ingredients</h3>
+      <ul>
+        <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+      </ul>
+    </div>
+    
+    <div class="section">
+      <h3>Instructions</h3>
+      <ol>
+        <li *ngFor="let instruction of recipe.instructions">{{ instruction }}</li>
+      </ol>
+    </div>
+  </div>
+</div>
+<ng-template #noData>
+  <app-no-data [message]="'No recipe found with ID '+id"></app-no-data>
+</ng-template>

@@ -1,0 +1,52 @@
+.filter-input-container {
+  max-width: 18rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  background-color: var(--background-primary);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-primary);
+}
+
+.filter-values {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.filter-input {
+  flex: 1;
+  padding: var(--spacing-sm);
+  font-size: 1rem;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--background-tertiary);
+  color: var(--text-primary);
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: var(--color-action);
+  box-shadow: 0 0 0 2px rgba(180, 202, 164, 0.5);
+}
+
+.add-value-btn {
+  padding: var(--spacing-sm);
+  font-size: 0.875rem;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--background-secondary);
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.add-value-btn:hover {
+  background-color: var(--color-action);
+}
+
+.selected-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}

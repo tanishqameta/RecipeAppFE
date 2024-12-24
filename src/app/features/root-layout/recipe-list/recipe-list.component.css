@@ -1,0 +1,44 @@
+.search-description {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 22vh;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.search-filter-bar {
+    position: sticky;
+    top: 0px;
+    background-color: var(--background-base);
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 4rem;
+    gap: 1rem;
+}
+
+.search-filter-bar .search {
+    flex: 1;
+}
+
+.transform-animation {
+    transform: translateY(22vh);
+    animation: translate 0.5s forwards;
+}
+
+@keyframes translate {
+    from {
+        transform: translateY(22vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

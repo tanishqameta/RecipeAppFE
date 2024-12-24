@@ -1,0 +1,27 @@
+.recipe-skeleton-card {
+    height: 22.5rem;
+    padding: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background-color: var(--background-primary);
+    border-radius: 0.5rem;
+}
+
+.sk-image {
+    height: 12rem;
+}
+
+.sk-name {
+    height: 2rem;
+}
+
+.sk-details {
+    height: 6.5rem;
+}
+
+.recipe-skeleton-card>div {
+    background-color: var(--background-tertiary);
+    border-radius: 0.25rem;
+}
+

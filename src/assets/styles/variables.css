@@ -1,0 +1,33 @@
+:root {
+    --background-base: #f0f4f8;
+    --background-primary: #ffffff;
+    --background-secondary: #e5e9ef;
+    --background-tertiary: #d1d7db;
+    --background-highlight: #b4caa4;
+    --background-application-header: linear-gradient(to right, #7a9e92, #3e7466);
+
+
+    --text-primary: #333333;
+    --text-secondary: #555555;
+    --text-inverted: #ffffff;
+
+    --border-primary: #d1d7db;
+    --border-secondary: #a0b0b9;
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 0.75rem;
+    --border-radius-xl: 1rem;
+    
+    --shadow-primary: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    --spacing-sm: 0.25rem;
+    --spacing-md: 0.5rem;
+    --spacing-lg: 0.75rem;
+    --spacing-xl: 1rem;
+    
+    --color-disabled: #cccccc;
+    --color-action: #b4caa4;
+    --color-green: #93C572;
+    --color-yellow: #FFDB58;
+    --color-red: #DC143C;
+}

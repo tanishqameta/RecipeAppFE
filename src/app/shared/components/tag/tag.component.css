@@ -1,0 +1,12 @@
+.tag {
+    padding: 0.17rem 0.5rem;
+    border-radius: var(--border-radius-md);
+    background-color: var(--background-primary);
+    border: 1.5px solid var(--color-action);
+    width: fit-content;
+    gap: 0.5rem;
+}
+
+.highlighted {
+    background-color: var(--background-highlight);
+}

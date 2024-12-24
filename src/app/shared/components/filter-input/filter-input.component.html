@@ -1,0 +1,23 @@
+<div class="filter-input-container">
+    <div class="filter-values">
+      <input
+        id="filterValue"
+        class="filter-input"
+        type="text"
+        placeholder="Filter by Tags..."
+        #valueInput
+        (keydown.enter)="onAddFilterValue(valueInput.value); valueInput.value = ''"
+      />
+      <button
+        class="add-value-btn"
+        (click)="onAddFilterValue(valueInput.value); valueInput.value = ''"
+      >
+        Add
+      </button>
+    </div>
+
+  <div class="selected-values" *ngIf="filteredValues.length > 0">
+    <app-tag *ngFor="let value of filteredValues" [label]="value" [isRemovable]="true" (onRemove)="onRemoveFilterValue(value)">
+    </app-tag>
+  </div>
+</div>

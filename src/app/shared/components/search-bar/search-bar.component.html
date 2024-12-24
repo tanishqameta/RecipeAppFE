@@ -1,0 +1,19 @@
+<div class="search-bar-container">
+  <form class="w-100" (ngSubmit)="onSearch()" [formGroup]="searchForm" novalidate>
+    <div class="search-bar flex-center">
+      <input
+        autofocus
+        type="text"
+        class="search-input"
+        formControlName="query"
+        placeholder="Search for recipes by name or cuisine"
+      />
+      <button type="submit" class="search-button icon-button" [disabled]="!searchForm.valid">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </form>
+  <div *ngIf="queryControl.invalid && (queryControl.dirty || queryControl.touched)" class="error-message">
+    Please enter minimum 3 characters to search
+  </div>
+</div>

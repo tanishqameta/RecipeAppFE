@@ -1,0 +1,4 @@
+<div class="user-rating" *ngIf="rating>0 || reviewCount>0" [ngClass]="{'bg-green': rating >= 4, 'bg-yellow': rating >= 2.5 && rating < 4, 'bg-red': rating < 2.5}">
+    <i class="bi bi-star-fill"></i>
+    <span>{{rating}} ({{reviewCount}})</span>
+</div>

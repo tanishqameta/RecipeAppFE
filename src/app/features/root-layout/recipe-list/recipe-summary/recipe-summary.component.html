@@ -1,0 +1,29 @@
+<div class="d-flex h-100 w-100 grow-animation" *ngIf="recipe">
+    <div class="recipe-card w-100" (click)="this.recipeClicked.emit(recipe)">
+      <div class="recipe-image">
+        <img 
+            [hidden]="!recipe.isImageLoaded"
+            [src]="recipe.image" 
+            (load)="recipe.isImageLoaded = true"
+            [alt]="recipe.name" 
+        />
+        <div class="image-loader pulse-animation" *ngIf="!recipe.isImageLoaded"></div>
+      </div>
+    
+      <h3 [title]="recipe.name" class="recipe-name text-ellipsis-1">{{ recipe.name }}</h3>
+    
+      <div class="recipe-detail-tag-container">
+          <div class="recipe-details">
+            <app-user-rating [rating]="recipe.rating" [reviewCount]="recipe.reviewCount"></app-user-rating>
+            <app-tag [label]="recipe.cuisine"></app-tag>
+            <div class="time-details">
+              <span><i class="bi bi-clock-history"></i></span>
+              {{ recipe.cookTimeMinutes }} min
+            </div>
+          </div>
+          <div class="recipe-tags">
+            <div [title]="recipe.tags.join(', ')" class="text-ellipsis-2">Tags: {{ recipe.tags.join(', ') }}</div>
+          </div>
+      </div>
+    </div>
+</div>

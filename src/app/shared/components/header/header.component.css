@@ -1,0 +1,21 @@
+.app-header {
+    background: var(--background-application-header);
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.user-icon {
+    font-size: 2rem;
+    color: var(--text-inverted);
+    cursor: pointer;
+}

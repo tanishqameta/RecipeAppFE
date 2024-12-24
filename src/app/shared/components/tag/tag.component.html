@@ -1,0 +1,6 @@
+<div class="tag flex-center" [ngClass]="{'highlighted': highlighted}" (click)="onClick.emit()">
+    {{label}}
+    <button class="icon-button" *ngIf="isRemovable" (click)="onRemove.emit(label)">
+        <i class="bi bi-x-circle"></i>
+    </button>
+</div>

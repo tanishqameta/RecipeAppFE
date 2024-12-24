@@ -1,0 +1,56 @@
+<div class="search-description" *ngIf="displaySearchDescription">
+  What would you like to cook?
+</div>
+<div
+  class="search-filter-bar"
+  [ngClass]="{ 'transform-animation': !displaySearchDescription }"
+>
+  <div class="filter" *ngIf="!displaySearchDescription">
+    <app-filter-input
+      (filtersChanged)="onFiltersChanged($event)"
+    ></app-filter-input>
+  </div>
+  <div class="search">
+    <app-search-bar (search)="onSearch($event)"></app-search-bar>
+  </div>
+  <div class="sort" *ngIf="!displaySearchDescription">
+    <app-sort-dropdown
+      [sortDropdownOptions]="sortDropdownOptions"
+      (sortChanged)="onSortChanged($event)"
+    ></app-sort-dropdown>
+  </div>
+</div>
+<div class="d-flex flex-column px-3" *ngIf="!displaySearchDescription">
+  <ng-container *ngIf="!isLoading; else loader">
+    <ng-container
+      *ngIf="
+        recipes
+          | filterBy : filterByTags : filterOptions
+          | orderBy
+            : sortOptions?.sortBy
+            : sortOptions?.isAscending as filterSortedRecipes
+      "
+    >
+      <ng-container *ngIf="filterSortedRecipes.length > 0; else noData">
+        <div class="recipe-grid">
+          <app-recipe-summary
+            *ngFor="let recipe of filterSortedRecipes"
+            [recipe]="recipe"
+            [routerLink]="[recipe.id]"
+          ></app-recipe-summary>
+        </div>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</div>
+
+<ng-template #loader>
+  <app-recipe-skeleton-loader *ngFor="let _ of skeletonArray">
+  </app-recipe-skeleton-loader>
+</ng-template>
+
+<ng-template #noData>
+  <app-no-data
+    [message]="'No recipes match your search.\nPlease try something else.'"
+  ></app-no-data>
+</ng-template>
