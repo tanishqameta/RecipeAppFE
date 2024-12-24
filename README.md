@@ -30,7 +30,7 @@ If you haven't already cloned the project, run:
 
 bash
 Copy code
-git clone <repository-url>
+git clone [<repository-url>](https://github.com/tanishqameta/RecipeAppFE.git)
 cd <project-directory>
 Install Dependencies
 
